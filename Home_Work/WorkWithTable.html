@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Students List Table Format</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 45%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      float: left;
+      margin-right: 5%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    h2 {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Students List (Table Format)</h1>
+
+  <h2>Male Students</h2>
+  <table id="maleTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Male students data will come here -->
+    </tbody>
+  </table>
+
+  <h2>Female Students</h2>
+  <table id="femaleTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Female students data will come here -->
+    </tbody>
+  </table>
+
+  <script>
+    const students = [
+      { id: 1, name: "arish", score: 85, gender: "male" },
+      { id: 2, name: "arbaj", score: 92, gender: "male" },
+      { id: 2, name: "Juhi", score: 92, gender: "female" },
+      { id: 2, name: "Mahak", score: 92, gender: "female" },
+      { id: 2, name: "Tanishka", score: 92, gender: "female" },
+      { id: 3, name: "raja", score: 78, gender: "male" },
+      { id: 3, name: "raja", score: 78, gender: "male" }
+    ];
+
+    const maleStudents = [];
+    const femaleStudents = [];
+
+    for (let i = 0; i < students.length; i++) {
+      if (students[i].gender === "male") {
+        maleStudents.push(students[i]);
+      } else if (students[i].gender === "female") {
+        femaleStudents.push(students[i]);
+      }
+    }
+
+    const maleTableBody = document.querySelector("#maleTable tbody");
+    const femaleTableBody = document.querySelector("#femaleTable tbody");
+
+    for (let i = 0; i < maleStudents.length; i++) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${maleStudents[i].id}</td>
+        <td>${maleStudents[i].name}</td>
+        <td>${maleStudents[i].score}</td>
+      `;
+      maleTableBody.appendChild(row);
+    }
+
+    for (let i = 0; i < femaleStudents.length; i++) {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${femaleStudents[i].id}</td>
+        <td>${femaleStudents[i].name}</td>
+        <td>${femaleStudents[i].score}</td>
+      `;
+      femaleTableBody.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [
+            { id: 1, name: "arish", score: 85, gender: "male" },
+            { id: 2, name: "arbaj", score: 92, gender: "male" },
+            { id: 2, name: "Juhi", score: 92, gender: "female" },
+            { id: 2, name: "Mahak", score: 92, gender: "female" },
+            { id: 2, name: "Tanishka", score: 92, gender: "female" },
+            { id: 3, name: "raja", score: 78, gender: "male" },
+            { id: 3, name: "raja", score: 78, gender: "male" }
+        ];
+
+        const maleStudents = [];
+        const femaleStudents = [];
+
+        for (let i = 0; i < students.length; i++) {
+            console.log(students[i]);
+            if (students[i].gender === "male") {
+                maleStudents.push(students[i]);
+            } //else if (students[i].gender === "female") {
+            // femaleStudents.push(students[i]);
+            else {
+                students[i].gender === "female";
+                femaleStudents.push(students[i]);
+            }
+        }
+        //}
+
+        console.log("Male Students:", maleStudents);
+        console.log("Female Students:", femaleStudents);
+
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
